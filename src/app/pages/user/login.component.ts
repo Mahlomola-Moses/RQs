@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'user-cmp',
+    selector: 'login-cmp',
     moduleId: module.id,
-    templateUrl: 'user.component.html'
+    templateUrl: 'login.component.html'
 })
 
-export class UserComponent implements OnInit{
+export class LoginComponent implements OnInit{
     ngOnInit(){
     }
 }

@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LocationStrategy, PathLocationStrategy } from "@angular/common";
 
 
 @NgModule({
@@ -21,16 +22,14 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   ],
   imports: [
     BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes,{
-      useHash: true
-    }),
+    RouterModule.forRoot(AppRoutes),
     SidebarModule,
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
     FixedPluginModule
   ],
-  providers: [],
+  providers: [ { provide: LocationStrategy, useClass: PathLocationStrategy },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
